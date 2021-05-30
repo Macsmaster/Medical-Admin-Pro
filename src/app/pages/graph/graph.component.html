@@ -1,1 +1,14 @@
-<p>graph works!</p>
+<div class="row">
+    <div class="col-6" *ngFor="let item of doughnutCharts">
+        
+        <app-doughnut 
+            [graphTitle]="item.doughnutChartTitle"
+            [graphLabels]="item.doughnutLabels"
+            [graphData]="item.doughnutChartData"
+            [graphColors]="item.doughnutColors">
+        </app-doughnut>
+
+    </div>
+
+</div>
+
