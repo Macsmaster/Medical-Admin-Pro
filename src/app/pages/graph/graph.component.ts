@@ -23,9 +23,9 @@ export class GraphComponent implements OnInit {
   {
 
     doughnutChartTitle: 'WIN',
-    doughnutLabels: ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'],
+    doughnutLabels: ['WIN 1', 'WIN 2', 'WIN 3'],
     doughnutChartData: [
-      [350, 450, 200],
+      [250, 350, 50],
     ],
     doughnutColors: [
       {
@@ -37,9 +37,9 @@ export class GraphComponent implements OnInit {
   {
 
     doughnutChartTitle: 'LOSE',
-    doughnutLabels: ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'],
+    doughnutLabels: ['Lose Sales', 'In-Store Sales', 'Mail-Order Sales'],
     doughnutChartData: [
-      [350, 450, 600],
+      [650, 550, 200],
     ],
     doughnutColors: [
       {
@@ -51,9 +51,9 @@ export class GraphComponent implements OnInit {
   {
 
     doughnutChartTitle: 'CLIENTS',
-    doughnutLabels: ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'],
+    doughnutLabels: ['New clients', 'Old Clients', 'Lose clients'],
     doughnutChartData: [
-      [350, 450, 20],
+      [150, 950, 20],
     ],
     doughnutColors: [
       {
