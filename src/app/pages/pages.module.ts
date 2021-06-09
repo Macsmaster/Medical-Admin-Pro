@@ -13,6 +13,8 @@ import { GraphComponent } from './graph/graph.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -27,6 +29,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     DashboardComponent,
     PagesComponent,
     AccountSettingsComponent,
+    PromisesComponent,
+    RxjsComponent,
 
   ],
   exports:[
