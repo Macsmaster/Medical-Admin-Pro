@@ -5,16 +5,14 @@ import { HeaderComponent } from './header/header.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
-  declarations: [ 
-    SidebarComponent,    
+  declarations: [
+    SidebarComponent,
     HeaderComponent,
     BreadcrumbsComponent,
   ],
   exports: [
-    SidebarComponent,    
+    SidebarComponent,
     HeaderComponent,
     BreadcrumbsComponent,
   ],
