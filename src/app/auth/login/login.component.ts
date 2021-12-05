@@ -40,24 +40,18 @@ export class LoginComponent implements OnInit {
       .subscribe( res =>  {
 
         if(this.loginForm.get('remember').value){
-          localStorage.setItem('email', this.loginForm.get('email').value)
+          localStorage.setItem('email', this.loginForm.get('email').value);
         }
         else {
           localStorage.removeItem('email')
         }
-
-        Swal.fire({
-          title: 'Usuario logueado!',
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        })
         this.router.navigateByUrl('/')
       }, (err) => {
         Swal.fire({
           title: 'Error!',
           text: err.error.msg,
           icon: 'error',
-          confirmButtonText: 'Aceptar'
+          confirmButtonText: 'Acept'
         })
       })
   }
@@ -85,8 +79,8 @@ renderButton() {
     this.auth2.attachClickHandler(element, {},
       (googleUser: any) => {
         const id_token = googleUser.getAuthResponse().id_token;
-        this.authService.loginGoogle(id_token).subscribe(
-          res => {
+        this.authService.loginGoogle(id_token)
+          .subscribe( res => {
             this.ngZone.run(() => {
               this.router.navigateByUrl('/');
             })

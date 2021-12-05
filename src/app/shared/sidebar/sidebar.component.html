@@ -11,13 +11,13 @@
             class="has-arrow waves-effect waves-dark"
             href="#"
             aria-expanded="false"
-            ><img src="./assets/images/users/profile.png" alt="user" /><span
+            ><img [src]="user.getImg"/><span
               class="hide-menu"
-              >Steave Jobs
+              >{{ user.name }}
             </span></a
           >
           <ul aria-expanded="false" class="collapse">
-            <li><a routerLink="javascript:void()">My Profile </a></li>
+            <li><a routerLinkActive="active" routerLink="./profile">My Profile </a></li>
             <li><a routerLink="javascript:void()">My Balance</a></li>
             <li><a routerLink="javascript:void()">Inbox</a></li>
             <li><a routerLink="account-settings">Account Setting</a></li>
@@ -43,10 +43,10 @@
               <a [routerLink]="submenuItem.url"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">
-                {{submenuItem.title}} 
+                {{submenuItem.title}}
               </a>
             </li>
-          
+
           </ul>
         </li>
     </ul>

@@ -24,19 +24,19 @@ export class IncreaseComponent implements OnInit {
       this.changeValue.emit(0)
       this.progress = 0;
       return
-      
+
     }
     if (this.progress >= 100 && value >= 0) {
         this.changeValue.emit(100)
         this.progress = 100
-      return 
+      return
     }
     this.progress = this.progress + value;
     this.changeValue.emit(this.progress)
   }
 
   onChange( value: number ){
-    
+
     if ( value >= 100 ){
       this.progress = 100;
     } else if ( value <= 0 ) {
@@ -46,8 +46,6 @@ export class IncreaseComponent implements OnInit {
     }
 
     this.changeValue.emit(this.progress)
-
-    console.log(this.progress + 'hey')
   }
 
 }
