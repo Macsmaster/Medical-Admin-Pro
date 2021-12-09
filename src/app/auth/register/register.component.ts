@@ -41,7 +41,6 @@ export class RegisterComponent implements OnInit {
 createUser() {
   this.formSubmitted = true
   if (this.registerForm.invalid) {
-    console.log('soy invalido')
     return
   }
   this.authService.createUser(this.registerForm.value)

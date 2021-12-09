@@ -63,7 +63,6 @@ export class AuthService {
   }
 
   googleInit() {
-    console.log(this.user)
     return new Promise<void>( resolve => {
       gapi.load('auth2', () => {
         this.auth2 = gapi.auth2.init({

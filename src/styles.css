@@ -11,3 +11,31 @@
 #themecolors .selector, .cursor {
   cursor: pointer
 }
+
+.modal-img-background {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+.hidde-modal {
+  display: none;
+}
+
+.w100 {
+  width: 100px;
+}
+
+.w140 {
+  width: 140px;
+}
+
+
+.avatar {
+  width: 40px;
+  border-radius: 100%;
+}

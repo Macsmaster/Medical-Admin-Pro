@@ -50,7 +50,6 @@ export class ProfileComponent implements OnInit {
         })
       },
       error => {
-        console.log(error);
         Swal.fire('Error', error.error.msg, 'error');
       }
       )
@@ -83,16 +82,7 @@ export class ProfileComponent implements OnInit {
         );
       },
       error => {
-        console.log(error);
         Swal.fire('Error', error, 'error');
       })
     }
-
-  uploadImg(){
-    console.log('Imagen subida exitosamente')
-  }
-
-
-
-
 }

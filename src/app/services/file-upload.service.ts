@@ -10,7 +10,7 @@ import { User } from '../shared/models/user.model';
 
 export class FileUploadService {
   private base_url = environment.base_url;
-  private user!: User
+  private user!: User;
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +29,6 @@ updateImg(
 ) {
   const formData = new FormData();
   formData.append('image', file);
-  console.log(formData)
  return this.http.put(`${ this.base_url }/uploads/${type}/${id}`, formData, {
    headers: {
      'x-token': this.token
@@ -39,7 +38,6 @@ updateImg(
       if (res.ok) {
         return res.newNameFile
       } else {
-        console.log(res.msg)
         return false
       }
     }),

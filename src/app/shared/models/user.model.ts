@@ -12,15 +12,13 @@ export class User  {
     public role?: string,
     public uid?: string
   ){
-
-    this.getImg
   }
   get getImg() {
-    if(this.img.includes('https')){
-      console.log(this.img)
+    if (!this.img){
+      return `${base_url}/uploads/users/not-found`;
+    } else if(this.img.includes('https')){
       return this.img;
-    }
-    if ( this.img ) {
+    } else if ( this.img ) {
       return `${base_url}/uploads/users/${this.img}`;
     } else {
       return `${base_url}/uploads/users/not-found`;

@@ -9,6 +9,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsersComponent } from './maintenance/users/users.component';
 
 
 const routes: Routes = [
@@ -18,12 +19,15 @@ const routes: Routes = [
     canActivate: [ AuthGuard ],
     children: [
       { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
-      { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
-      { path: 'graphics', component: GraphComponent, data: { title: 'Graphics' } },
-      { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Settings' } },
+      { path: 'progress', component: ProgressComponent, data: { title: 'Progreso' } },
+      { path: 'graphics', component: GraphComponent, data: { title: 'Graficos' } },
+      { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Configuración' } },
       { path: 'promises', component: PromisesComponent, data: { title: 'Promises' } },
       { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
-      { path: 'profile', component: ProfileComponent, data: { title: 'Profile' } },
+      { path: 'profile', component: ProfileComponent, data: { title: 'Perfil' } },
+
+      // Maintenance
+      { path: 'users', component: UsersComponent, data: { title: 'Usuarios' } },
     ]
   },
 ];
