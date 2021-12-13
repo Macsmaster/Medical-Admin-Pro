@@ -23,7 +23,7 @@ export class SidebarService {
     icon: 'mdi mdi-folder-lock-open',
     submenu: [
       { title: 'Usuarios', url: 'users', },
-      { title: 'Hospitales', url: 'hopitals', },
+      { title: 'Hospitales', url: 'hospitals', },
       { title: 'Doctores', url: 'doctors', },
     ]
 

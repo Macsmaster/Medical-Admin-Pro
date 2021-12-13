@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './maintenance/users/users.component';
 import { DoctorsComponent } from './maintenance/doctors/doctors.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
+import { DoctorComponent } from './maintenance/doctors/doctor/doctor.component';
 
 
 
@@ -40,6 +41,7 @@ import { HospitalsComponent } from './maintenance/hospitals/hospitals.component'
     UsersComponent,
     DoctorsComponent,
     HospitalsComponent,
+    DoctorComponent,
 
   ],
   exports:[
