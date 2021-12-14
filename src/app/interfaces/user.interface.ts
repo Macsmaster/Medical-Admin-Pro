@@ -4,6 +4,6 @@ export interface IUser {
   email: string,
   google: boolean,
   img: string,
-  role: string,
+  role: 'ADMIN_ROLE' | 'USER_ROLE',
   uid?: string
 }

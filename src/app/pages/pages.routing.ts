@@ -13,6 +13,8 @@ import { UsersComponent } from './maintenance/users/users.component';
 import { DoctorsComponent } from './maintenance/doctors/doctors.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
 import { DoctorComponent } from './maintenance/doctors/doctor/doctor.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 
 const routes: Routes = [
@@ -30,11 +32,16 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent, data: { title: 'Perfil' } },
 
       // Maintenance
-      { path: 'users', component: UsersComponent, data: { title: 'Usuarios' } },
+
       { path: 'doctors', component: DoctorsComponent, data: { title: 'Médicos' } },
       { path: 'doctors/:id', component: DoctorComponent, data: { title: 'Médicos' } },
       { path: 'hospitals', component: HospitalsComponent, data: { title: 'Hospitales' } },
 
+      // Admin rputes
+      { path: 'users', canActivate: [AdminGuard],  component: UsersComponent, data: { title: 'Usuarios' } },
+
+      // Search
+      { path: 'search/:term', component: SearchResultsComponent, data: { title: 'Resultados de búsqueda' } },
     ]
   },
 ];

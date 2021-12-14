@@ -9,12 +9,10 @@ import { User } from '../models/user.model';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  public menuItems: any[] = [];
   public user!: User
 
-  constructor(private sidebarService: SidebarService,
+  constructor(public sidebarService: SidebarService,
     private authService: AuthService  ) {
-    this.menuItems = this.sidebarService.menu;
     this.user = this.authService.user
   }
 

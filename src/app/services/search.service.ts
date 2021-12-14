@@ -71,4 +71,10 @@ export class SearchService {
       })
     );
   }
+
+
+  getByGeneralSearch(term: string): Observable<any[]>{
+    const url = `${this.base_url}/all/${term}`
+    return this.http.get<any[]>(url, this.headers)
+  }
 }

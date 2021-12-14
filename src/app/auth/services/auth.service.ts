@@ -42,6 +42,10 @@ export class AuthService {
     return this.user.uid || '';
   }
 
+  get role():'ADMIN_ROLE' | 'USER_ROLE' {
+    return this.user.role;
+  }
+
 
   login(formData: ILogin){
     return this.http.post(`${base_url}/login`, formData)
@@ -57,7 +61,7 @@ export class AuthService {
     return this.http.post(`${base_url}/login/google`, { token })
       .pipe(
         tap((res: any) => {
-          localStorage.setItem('token', res.token)
+          this.localStorageSave(res.token, res.menu);
         })
       )
   }
@@ -75,15 +79,19 @@ export class AuthService {
 
   }
 
-
-
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('menu');
     this.auth2.signOut().then( () => {
       this.ngZone.run(() => {
         this.router.navigateByUrl('/login');
       })
     });
+  }
+
+  localStorageSave(token: string, menu: string){
+    localStorage.setItem('token', token );
+    localStorage.setItem('menu', JSON.stringify(menu));
   }
 
 
@@ -93,10 +101,10 @@ export class AuthService {
         'x-token': this.token
       }
     }).pipe(
-      map( (resp: any) => {
-        const { email, google, lastname, name, role, img = '', uid } = resp.user;
+      map( (res: any) => {
+        const { email, google, lastname, name, role, img = '', uid } = res.user;
         this.user = new User(name, lastname, email, '', google, img,  role, uid );
-        localStorage.setItem('token', resp.token );
+        this.localStorageSave(res.token, res.menu);
         return true;
       }),
       catchError( error => {
@@ -111,7 +119,7 @@ createUser(formData: IRegisterForm){
   return this.http.post(`${base_url}/users`, formData)
     .pipe(
       tap((res: any) => {
-        localStorage.setItem('token', res.token)
+        this.localStorageSave(res.token, res.menu);
       })
     )
 }
@@ -127,7 +135,5 @@ updateProfile( data: IUpdateUser ) {
         'x-token': this.token
       }
     });
-
   }
-
 }
